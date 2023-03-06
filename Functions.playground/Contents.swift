@@ -90,4 +90,3 @@ getFullName(firstName: "Love")
 getFullName(lastName: "You")
 getFullName(firstName: "Love", lastName: "You")
 
-// end of first day learning swift 
