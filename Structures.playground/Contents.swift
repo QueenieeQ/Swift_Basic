@@ -1,7 +1,7 @@
 import Foundation
 
-// structures in swift are way of grounping data together and giving some sort of name
-// varlue types
+// structures in swift are way of grouping data together and giving some sort of name
+// value types
 
 struct Person{
     let name: String
