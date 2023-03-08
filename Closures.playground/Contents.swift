@@ -78,7 +78,9 @@ customAdd2(
     20,
     30,
 using: {$0 + $1 + 10})
+// calling argument in closure by order in line
 //trailing closure syntax
+// using trailling closure when closure is the last argument of function
 
 func add10To(_ value: Int) -> Int {
     value + 10
@@ -108,4 +110,15 @@ doAddition(
     using: add20To(_:)
 )
 // complete out of mind in this section
-// very lazy in this closure things 
+// very lazy in this closure things
+
+// TODO: research closure more
+// closure expression:
+//{
+//  (prams) -> (returnType) in
+//    statement
+//}
+
+// function in line dont have "func" keyword before them actually a closure
+
+
