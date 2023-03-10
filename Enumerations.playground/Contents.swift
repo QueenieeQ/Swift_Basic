@@ -231,7 +231,57 @@ motorCycles.getManufacturer()
 motorCycles.manufacturer
 
 
+// enums with raw values
+
+enum FamilyMember: String{
+    case father = "Dad"
+//     can i cat father to dad?
+    case mother = "Mom"
+    case brother = "Bro"
+    
+}
+// print raw value
+FamilyMember.father.rawValue
 
 
+enum FavoriteEmoji:String, CaseIterable{
+    case sad = "🥲"
+    case laugh = "😁"
+    case whistle = "😗"
+}
+// protocol
 
+FavoriteEmoji.allCases
+FavoriteEmoji.allCases.map(\.rawValue)
 
+// reverse value
+
+// this is optionals
+if let laugh = FavoriteEmoji(rawValue: "😁"){
+    "Laugh"
+    laugh
+} else {
+    " Dont laugh"
+}
+if let snow = FavoriteEmoji(rawValue: "❄️"){
+    "Snow in here"
+    snow
+} else{
+    "Snow doesn't exist"
+}
+
+// mutating member of a enumeration
+
+enum Height{
+    case short, medium, long
+    mutating func makelong(){
+        self=Height.long
+    }
+}
+
+var myHeight = Height.medium
+myHeight.makelong()
+myHeight
+
+// recursive enums or indirect enums
+// i will learn this later =)) 
