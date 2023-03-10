@@ -179,3 +179,59 @@ if case let .applications(path, name) = bioShock{
 }
 
 // case statement and switch case  for enums with associated value
+
+
+enum Vehicles {
+    case car(
+        manufacturer: String,
+        model: String
+    )
+    case motorCycles(
+    manufacturer: String,
+    yearMade: Int
+    )
+    
+    func getManufacturer() ->String{
+        switch self{
+        case let .car(manufacturer, _):
+            return manufacturer
+        case let .motorCycles(manufacturer, _):
+            return manufacturer
+        }
+    }
+    var manufacturer:String {
+        switch self{
+        case let .car(manufacturer, _):
+            return manufacturer
+        case let .motorCycles(manufacturer, _):
+            return manufacturer
+        }
+    }
+
+
+    
+}
+
+let car = Vehicles.car(
+    manufacturer: "Vinfast",
+    model: "VF8"
+)
+car.getManufacturer()
+car.manufacturer
+
+let motorCycles = Vehicles.motorCycles(
+    manufacturer: "Honda",
+    yearMade: 2022
+)
+
+// grab manufacture only in 2 cases
+
+
+motorCycles.getManufacturer()
+motorCycles.manufacturer
+
+
+
+
+
+
