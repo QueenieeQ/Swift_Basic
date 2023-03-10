@@ -78,11 +78,104 @@ describeAnimals(Animals.dog)
 
 enum Shortcut {
     case wwwUrl(path: URL)
-    case screenshots
-    case applications
+//    add value to cases by add path: URL
+//    path is name of argument and URL is type of date stored
+    case screenshots(location: String, content: String)
+    case applications(path: String, name: String)
 }
-// path must be URL to link data
 let wwwApple = Shortcut.wwwUrl(
     path: URL(string: "https://apple.com")!
-//   "!"  unary prefix
+//   "!"  unary suffix
 )
+
+// equilty operators
+
+switch wwwApple{
+    
+case .wwwUrl(
+    path: let path
+):
+    path
+    break
+case .screenshots(
+    location: let location,
+    content: let content
+):
+    location
+    content
+    break
+case .applications(
+    path: let path,
+    name: let name
+):
+    path
+    name
+}
+
+
+switch wwwApple{
+    
+case let .wwwUrl(
+    path
+):
+    path
+    break
+case let .screenshots(
+    location,
+     content
+):
+    location
+    content
+    break
+case .applications(
+    let path,
+    let name
+):
+    path
+    name
+}
+
+// check if a shorcut of instance of enumerations yes or no
+if case let .wwwUrl(path) = wwwApple {
+    path
+}
+
+
+switch wwwApple{
+    
+case .wwwUrl(
+    let path
+):
+    path
+    break
+case .screenshots(
+     let location,
+     let content
+):
+    location
+    content
+    break
+case .applications(
+     let path,
+     let name
+):
+    path
+    name
+}
+// asign variable to a case of a enums
+
+let bioShock = Shortcut.applications(
+    path: "C:/Games/Bioshock/Bin",
+    name: "Bioshock"
+)
+
+// check a variable in a case of enums
+if case let .applications(_, name) = bioShock {
+    name
+}
+if case let .applications(path, name) = bioShock{
+    path
+    name
+}
+
+// case statement and switch case  for enums with associated value
