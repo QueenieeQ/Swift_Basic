@@ -284,4 +284,6 @@ myHeight.makelong()
 myHeight
 
 // recursive enums or indirect enums
-// i will learn this later =)) 
+// i will learn this later =))
+// a commit to not miss a day
+// move to classes in a moment
