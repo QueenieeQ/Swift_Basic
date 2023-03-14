@@ -97,8 +97,8 @@ baoAnh.age
 // convenience initializer
 
 //  secondary initializer the provides an alternative way to initalize an instance of a class or struct, but delegate to a primary initializer to set up the instance
-class Tesla {
-    let manufacturer = "Tesla"
+class Vinfast {
+    let manufacturer = "Vinfast"
     let model: String
     let year: Int
 //    any initializer that doesn't have word convenience before is a designated initializer
@@ -106,10 +106,10 @@ class Tesla {
      init(
     
     ) {
-        self.model = "X"
+        self.model = "VF8"
         self.year = 2023
     }
-//    cant delegate work to another initializer
+//    designated cant delegate work to another initializer
     init(
         model: String,
         year: Int
@@ -117,7 +117,67 @@ class Tesla {
         self.model = model
         self.year = year
     }
+    
+//    but convenience init can delegate to another init =))
+    convenience init (
+        model: String
+    ){
+        self.init(
+            model: model,
+            year: 2023
+        )
+    }
 }
+class VinfastVF5: Vinfast{
+//    you have override init in super class
+    override init(
+        
+    ){
+        super.init(
+            model: "VF5",
+            year: 2023
+//        designated init can only call to designated init in their superclass
+//        super.init(model: "VF5")
+        )
+    }
+}
+let VF5 = VinfastVF5()
+print(VF5.model)
+print(VF5.year)
+print(VF5.manufacturer)
+// all information above is come from super class
 
+//classes are referenre type not a value type
 
+let sonVu = Person2(age: 22)
+sonVu.age
+func doSomethingFun(with person: Person2){
+    person.increaseAge()
+    
+}
+doSomethingFun(with: sonVu)
+sonVu.age
 
+// classes are reference type by calling this function and passing an instance of your variable to doSomethingFun function make you not copy the value of sonVu over as new instance except you passing memory space
+
+// de-initializer
+// automatic clean up your memory
+class MyLove{
+    init(
+    ){
+        "Initialized"
+    }
+    func doSomethingUseful(){
+        "I'm text in this line"
+    }
+    deinit{
+        "Deinitialized"
+    }
+}
+let myClosure = {
+    let myLove = MyLove()
+    myLove.doSomethingUseful()
+
+}
+myClosure
+//initializer called and invoked because after line 178 and 179 in that scope complete finished meaning all variable go out of scope
