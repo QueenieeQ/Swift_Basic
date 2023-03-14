@@ -122,3 +122,12 @@ doAddition(
 // function in line dont have "func" keyword before them actually a closure
 
 
+let numbers = [ 4,5,6,7,3,2,9]
+let sortNumbers = numbers.sorted {$0 < $1}
+// it need run 14 times to complete sort
+
+//sort() method is called on an array of intergers, and a closure is passed as an argument to specify the sorting order
+// the closure takes two interger parameters '$0' and '$1' and return a boolean value indicating whenther the first parameters is less than the second
+print(sortNumbers)
+
+
