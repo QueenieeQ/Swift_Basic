@@ -181,3 +181,6 @@ let myClosure = {
 }
 myClosure
 //initializer called and invoked because after line 178 and 179 in that scope complete finished meaning all variable go out of scope
+
+
+// restart learning process
