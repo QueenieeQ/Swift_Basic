@@ -92,4 +92,54 @@ woof.age
 
 // mutatating function
 // see you later this day
+// continue
+ 
+protocol Vehicles{
+    var speed: Int { get set}
+    mutating func increaseSpeed(by value: Int)
+}
+extension Vehicles{
+    mutating func increaseSpeed(by value: Int){
+        self.speed += value
+    }
+}
 
+struct Bike: Vehicles{
+    var speed: Int
+    init(){
+        self.speed = 0
+    }
+}
+var bike = Bike()
+bike.speed
+bike.increaseSpeed(by: 10)
+bike.speed
+
+// is syntax
+
+func describe(obj: Any){
+    if obj is Vehicles{
+        print("obj conform to Vehicle protocol")
+    } else {
+        print("obj doesnt conform to Vehicles protocol")
+    }
+}
+
+describe(obj: bike)
+
+// as syntax
+// conditionally promote an object to a specific type
+// create a function can allow any object to come in and if that obj is "Vehicles" then increase speed by
+func increaseSpeedIfVehicles(obj: Any) {
+    if var vehicles = obj as? Vehicles{
+        vehicles.speed
+        vehicles.increaseSpeed(by: 10)
+        vehicles.speed
+        
+    } else{
+        "this is not a vehicles"
+    }
+}
+increaseSpeedIfVehicles(obj: bike)
+bike.speed
+//  bike is a instance, structure are values type
