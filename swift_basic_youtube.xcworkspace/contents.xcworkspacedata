@@ -2,6 +2,12 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:theBasic.playground">
+   </FileRef>
+   <FileRef
+      location = "group:Swift_Docs.playground">
+   </FileRef>
+   <FileRef
       location = "group:Extensions.playground">
    </FileRef>
    <FileRef
