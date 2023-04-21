@@ -9,6 +9,7 @@ var red, green, blue: Double
 
 // constraint can contain anycharacter but you must be carefull when name it
 let 😸 = "Meow"
+Let Dog = " Whoof"
 
 
 // double can have 15 decimal digits and float is about 6
